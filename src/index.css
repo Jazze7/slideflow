@@ -32,6 +32,12 @@ body {
 	place-items: center;
 	min-width: 320px;
 	min-height: 100vh;
+	background: #fff;
+	color: #000;
+}
+.dark-mode {
+	background: #0000;
+	color: #fff;
 }
 
 h1 {
@@ -69,4 +75,40 @@ button:focus-visible {
 	button {
 		background-color: #f9f9f9;
 	}
+}
+
+@font-face {
+	font-family: "Bungee-Tint";
+	src: url("./assets/fonts/BungeeTint-Regular.woff2") format("woff2"),
+		url("./assets/fonts/BungeeTint-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto-Bold";
+	src: url("./assets/fonts/RobotoSlab-Bold.woff2") format("woff2"),
+		url("RobotoSlab-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto-Medium";
+	src: url("./assets/fonts/RobotoSlab-Medium.woff2") format("woff2"),
+		url("./assets/fonts/RobotoSlab-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto-Regular";
+	src: url("./assets/fonts/RobotoSlab-Regular.woff2") format("woff2"),
+		url("./assets/fonts/RobotoSlab-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
