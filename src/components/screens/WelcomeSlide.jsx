@@ -13,29 +13,31 @@ export default function WelcomeSlide() {
 
 	return (
 		<>
-			<div className="m-auto font-['Bungee-Tint'] text-center">
-				<Typical
-					steps={[
-						"Hello there,",
-						1250,
-						"Welcome to the SlideFlow",
-						1250,
-					]}
-					wrapper="h1"
-					loop={1}
-				/>
-			</div>
-			<Link to="/gallery">
-				<Button
-					variant="contained"
-					className="!mt-5
+			<div className="h-[75vh] flex flex-col">
+				<div className="m-auto font-['Bungee-Tint'] text-center">
+					<Typical
+						steps={[
+							"Hello there,",
+							1250,
+							"Welcome to the SlideFlow",
+							1250,
+						]}
+						wrapper="h1"
+						loop={1}
+					/>
+				</div>
+				<Link to="/gallery">
+					<Button
+						variant="contained"
+						className="!mt-5
 				!font-['Roboto-Bold']
 			"
-					endIcon={<ArrowForwardIcon />}
-				>
-					Next
-				</Button>
-			</Link>
+						endIcon={<ArrowForwardIcon />}
+					>
+						Next
+					</Button>
+				</Link>
+			</div>
 		</>
 	);
 }

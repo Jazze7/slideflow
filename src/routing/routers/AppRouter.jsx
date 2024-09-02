@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import WelcomeSlide from "../../components/screens/WelcomeSlide";
 import GallerySlide from "../../components/screens/GallerySlide";
 import { useSelector } from "react-redux";
+import Header from "../../components/screens/Header";
 
 export default function AppRouter() {
 	let darkMode = useSelector((state) => state.theme?.darkMode);
@@ -16,6 +17,7 @@ export default function AppRouter() {
 	}, [darkMode]);
 	return (
 		<>
+			<Header />
 			<Routes>
 				<Route path="/" element={[<WelcomeSlide />]} />
 				<Route path="/gallery" element={[<GallerySlide />]} />
