@@ -13,7 +13,10 @@ export default function WelcomeSlide() {
 
 	return (
 		<>
-			<div className="h-[75vh] flex flex-col">
+			<div
+				style={{ height: "calc(100vh - 200px)" }}
+				className=" flex flex-col h-[calc(100vh-180px)"
+			>
 				<div className="m-auto font-['Bungee-Tint'] text-center">
 					<Typical
 						steps={[
@@ -29,9 +32,7 @@ export default function WelcomeSlide() {
 				<Link to="/gallery">
 					<Button
 						variant="contained"
-						className="!mt-5
-				!font-['Roboto-Bold']
-			"
+						className="!font-['Roboto-Bold']"
 						endIcon={<ArrowForwardIcon />}
 					>
 						Next

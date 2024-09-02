@@ -34,6 +34,8 @@ body {
 	min-height: 100vh;
 	background: #fff;
 	color: #000;
+	background: url("./assets/images/2.webp") no-repeat center center;
+	
 }
 .dark-mode {
 	background: #0000;
