@@ -9,6 +9,7 @@ import Footer from "../../components/screens/Footer";
 import Layout from "../../components/screens/Layout";
 import ChartSlide from "../../components/screens/ChartSlide";
 import CodeSlide from "../../components/screens/CodeSlide";
+import CompilerPy from "../../components/screens/CompilerPy";
 
 export default function AppRouter() {
 	let darkMode = useSelector((state) => state.theme?.darkMode);
@@ -28,6 +29,7 @@ export default function AppRouter() {
 					<Route path="/gallery" element={[<GallerySlide />]} />
 					<Route path="/chart" element={[<ChartSlide />]} />
 					<Route path="/code-block" element={[<CodeSlide />]} />
+					<Route path="/code-compiler" element={[<CompilerPy />]} />
 				</Routes>
 			</Layout>
 			<Footer />
