@@ -1,15 +1,17 @@
 import React from "react";
-import image1 from "../../assets/images/logo.png";
+
+// Images
+import logo from "../../assets/images/logo.png";
 
 const Layout = ({ children }) => {
 	return (
-		<div className="relative min-h-screen">
+		<div className="relative ">
 			{/* Demo Logo */}
 			<div
 				className="absolute top-1/2 left-1/2 "
 				style={{ transform: "translate(-50%,-50%)", opacity: "0.1" }}
 			>
-				<img src={image1} alt="Demo Logo" className="h-full" />
+				<img src={logo} alt="Demo Logo" className="h-full" />
 			</div>
 
 			{/* Watermark */}

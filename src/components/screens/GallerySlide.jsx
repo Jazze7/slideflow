@@ -1,23 +1,28 @@
 import React, { useState } from "react";
+
+// components
 import { Container } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
-import LinearProgress from "@mui/material/LinearProgress";
-import { motion } from "framer-motion";
 import Button from "@mui/material/Button";
+
+// packages
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+// Icons
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 // images
-import image1 from "../../assets/images/2.webp";
-import image2 from "../../assets/images/7.webp";
-import image3 from "../../assets/images/8.webp";
-import image4 from "../../assets/images/3.webp";
-import image5 from "../../assets/images/4.webp";
-import image6 from "../../assets/images/5.webp";
-import image7 from "../../assets/images/6.webp";
-import image8 from "../../assets/images/9.webp";
-import image9 from "../../assets/images/10.webp";
-import { Link } from "react-router-dom";
+import image1 from "../../assets/images/gallery-image-1.jpg";
+import image2 from "../../assets/images/gallery-image-2.jpg";
+import image3 from "../../assets/images/gallery-image-3.jpg";
+import image4 from "../../assets/images/gallery-image-4.jpg";
+import image5 from "../../assets/images/gallery-image-5.jpg";
+import image6 from "../../assets/images/gallery-image-6.jpg";
+import image7 from "../../assets/images/gallery-image-7.jpg";
+import image8 from "../../assets/images/gallery-image-8.jpg";
+import image9 from "../../assets/images/gallery-image-9.jpg";
 
 export default function GallerySlide() {
 	const images = [
@@ -58,7 +63,7 @@ export default function GallerySlide() {
 						Previous
 					</Button>
 				</Link>
-				<Link to="/gallery">
+				<Link to="/code-block">
 					<Button
 						variant="contained"
 						className="!mt-5
@@ -87,17 +92,20 @@ function GalleryItem({ src, alt }) {
 				className="relative overflow-hidden"
 				style={{ paddingBottom: "100%" }}
 			>
+				{/* Preloader */}
 				{loading && (
 					<motion.div
 						className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80"
 						initial={{ opacity: 1 }}
 						animate={{ opacity: 0 }}
+						exit={{ opacity: 0 }}
 						transition={{ duration: 0.5 }}
 					>
 						<CircularProgress />
-						<LinearProgress />
 					</motion.div>
 				)}
+
+				{/* Image */}
 				<motion.img
 					src={src}
 					alt={alt}

@@ -1,6 +1,17 @@
 import React from "react";
+
+// packages
 import Chart from "react-apexcharts";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+// component
+import { Button } from "@mui/material";
+
+// Icon
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export default function ChartSlide() {
 	// Access dark mode state from Redux store
@@ -70,10 +81,52 @@ export default function ChartSlide() {
 		},
 	];
 
+	// Framer Motion animation variants
+	const chartVariants = {
+		hidden: { opacity: 0, y: 50 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.6,
+				ease: "easeOut",
+			},
+		},
+	};
+
 	return (
 		<div>
-			<div id="chart" className="w-full sm:w-3/4 md:w-1/2 m-auto pt-14">
+			<motion.div
+				id="chart"
+				className="w-full sm:w-3/4 md:w-1/2 m-auto pt-14"
+				variants={chartVariants}
+				initial="hidden"
+				animate="visible"
+			>
 				<Chart options={options} series={series} type="line" />
+			</motion.div>
+			<div className="flex justify-center mt-10">
+				<Link to="/code-compiler">
+					<Button
+						variant="contained"
+						className="!mt-5 !mr-4
+				!font-['Roboto-Bold']
+			"
+						startIcon={<ArrowBackIcon />}
+					>
+						Previous
+					</Button>
+				</Link>
+				<Link to="/end-slide">
+					<Button
+						variant="contained"
+						className="!mt-5
+				!font-['Roboto-Bold']"
+						endIcon={<ArrowForwardIcon />}
+					>
+						Next
+					</Button>
+				</Link>
 			</div>
 		</div>
 	);

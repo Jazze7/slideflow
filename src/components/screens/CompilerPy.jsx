@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // packages
 import MonacoEditor from "@monaco-editor/react";
-import { useSelector } from "react-redux";
 import { Button, Container, Box, CircularProgress } from "@mui/material";
+import { motion } from "framer-motion";
 
+// store
+import { useSelector } from "react-redux";
 // api
 import { executeCode } from "../utilities/api";
+import { Link } from "react-router-dom";
+
+// Icon
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export default function CompilerPy() {
 	const [code, setCode] = useState(
@@ -14,7 +21,6 @@ export default function CompilerPy() {
 	);
 	const [output, setOutput] = useState(null);
 	const [loading, setLoading] = useState(false);
-	const darkMode = useSelector((state) => state.theme.darkMode); //toggle darkmode
 
 	// run code in the editor
 	const runCode = async () => {
@@ -34,18 +40,30 @@ export default function CompilerPy() {
 
 	return (
 		<>
-			<h1 className="mb-6 font-['Bungee-Tint']">Python Compiler</h1>
-			<Container className="flex justify-between">
-				<div style={{ height: "600px", width: "48%" }}>
-					<span className="block font-['Roboto-Regular'] mb-6">
+			<motion.h1
+				className="mb-6 font-['Bungee-Tint'] text-3xl md:text-5xl text-center"
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1 }}
+			>
+				Python Compiler
+			</motion.h1>
+			<Container className="flex flex-col md:flex-row justify-between items-stretch">
+				<motion.div
+					style={{ height: "60vh" }}
+					className="md:w-[48%] w-full mb-10 md:mb-0"
+					initial={{ opacity: 0, y: -50 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8 }}
+				>
+					<span className="block font-['Roboto-Regular'] mb-2 md:mb-6">
 						Input:
 					</span>
 					<MonacoEditor
-						height="100vh"
-						theme="vs-light"
+						height="100%"
+						theme="vs-dark"
 						language={"python"}
 						value={code}
-						defaultValue="//some comment"
 						onChange={(value) => setCode(value)}
 						options={{
 							selectOnLineNumbers: true,
@@ -54,17 +72,17 @@ export default function CompilerPy() {
 							automaticLayout: true,
 						}}
 					/>
-				</div>
-				<div
-					style={{
-						height: "600px",
-						width: "48%",
-					}}
+				</motion.div>
+				<motion.div
+					className="md:w-[48%] w-full"
+					initial={{ opacity: 0, y: -50 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.2 }}
 				>
-					<div className="flex">
+					<div className="flex items-center mb-2 md:mb-4">
 						<Button
 							onClick={() => runCode()}
-							className="!mb-3  !font-['Roboto-Regular']"
+							className="!font-['Roboto-Regular']"
 							variant="contained"
 							color="success"
 						>
@@ -76,26 +94,48 @@ export default function CompilerPy() {
 					</div>
 
 					<Box
-						height={"100vh"}
+						height={"60vh"}
 						p={2}
 						sx={{
-							p: 2,
 							border: "1px dashed grey",
 							bgcolor: "black",
+							overflowY: "auto",
 						}}
 					>
 						{loading ? (
 							<CircularProgress />
 						) : (
-							<pre>
+							<pre className="block !text-white">
 								{output
 									? output
 									: "Click 'Run code' to see output here"}
 							</pre>
 						)}
 					</Box>
-				</div>
+				</motion.div>
 			</Container>
+			<div className="flex justify-center mt-10">
+				<Link to="/code-block">
+					<Button
+						variant="contained"
+						className="!mt-5 !mr-4
+						!font-['Roboto-Bold']"
+						startIcon={<ArrowBackIcon />}
+					>
+						Previous
+					</Button>
+				</Link>
+				<Link to="/chart">
+					<Button
+						variant="contained"
+						className="!mt-5
+						!font-['Roboto-Bold']"
+						endIcon={<ArrowForwardIcon />}
+					>
+						Next
+					</Button>
+				</Link>
+			</div>
 		</>
 	);
 }

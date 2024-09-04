@@ -1,21 +1,21 @@
 import React from "react";
-import Button from "@mui/material/Button";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 // package
 import Typical from "react-typical";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+
+// component
+import Button from "@mui/material/Button";
+
+// /Icon
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function WelcomeSlide() {
-	const darkMode = useSelector((state) => state.theme?.darkMode);
-	console.log(darkMode, "==dark mode");
-
 	return (
 		<>
 			<div
-				style={{ height: "calc(100vh - 200px)" }}
-				className=" flex flex-col h-[calc(100vh-180px)"
+				style={{ height: "calc(100vh - 236px)" }}
+				className=" flex flex-col "
 			>
 				<div className="m-auto font-['Bungee-Tint'] text-center">
 					<Typical
