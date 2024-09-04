@@ -14,7 +14,6 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 // component
 import { Button } from "@mui/material";
-import { useSelector } from "react-redux";
 
 export default function CodeSlide() {
 	const [data, setData] = useState(
