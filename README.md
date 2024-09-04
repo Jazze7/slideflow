@@ -26,6 +26,10 @@ Here are some screenshots showcasing the different slides and features of Slide 
 ![Chart Slide](./screenshots/chart-slide-light.png)
 *Chart Slide: Showcasing interactive data visualization capabilities.*
 
+![Closing Slide](./screenshots/end-slide-dark.png)
+![Closing Slide](./screenshots/end-slide-light.png)
+*Chart Slide: the final slide.*
+
 
 
 ## Getting Started
