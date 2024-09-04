@@ -17,8 +17,6 @@ import { Button } from "@mui/material";
 import { useSelector } from "react-redux";
 
 export default function CodeSlide() {
-	const darkMode = useSelector((state) => state.theme.darkMode); //toggle darkmode
-
 	const [data, setData] = useState(
 		`function greet(name) {
 	  return \`Hello, \${name}!\`;
@@ -38,7 +36,7 @@ export default function CodeSlide() {
 				Code Block
 			</motion.h1>
 			<motion.span
-				className="block mb-3 font-['Roboto-Bold']"
+				className="block mb-3 font-['Roboto-Regular']"
 				initial={{ opacity: 0, x: -50 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.8 }}
@@ -52,6 +50,7 @@ export default function CodeSlide() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1, delay: 0.2 }}
+				style={{ color: "white" }}
 			/>
 			<motion.span
 				className="block font-['Roboto-Bold'] mb-6"
