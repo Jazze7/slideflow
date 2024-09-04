@@ -15,7 +15,7 @@ Here are some screenshots showcasing the different slides and features of Slide 
 *Gallery Slide: Displaying a grid of images with smooth loading animations.*
 
 ![Code Editor Slide](./screenshots/code-slide-dark.png)
-![Code Editor Slide](./screenshots/code-slide-light.png)
+![Code Editor Slide](./screenshots/code-block-light.png)
 *Code Editor Slide: Featuring syntax highlighting and a sleek interface.*
 
 ![Python Compiler Slide](./screenshots/compiler-slide-dark.png)
